@@ -169,17 +169,17 @@
       <h2>NOUS CONTACTER</h2>
       <!-- <p class="img"><img src="assets/images/contact.png" alt=""></p> -->
       <form action="https://formsubmit.co/bouniadev@gmail.com" method="POST">
-        <input type="text" name="prenom" placeholder="prenom" />
-        <input type="text" name="nom" placeholder="nom" />
-        <input type="mail" name="mail" placeholder="e-mail" />
-        <select name="objet">
+        <input required type="text" name="prenom" placeholder="prenom" />
+        <input required type="text" name="nom" placeholder="nom" />
+        <input required type="mail" name="mail" placeholder="e-mail" />
+        <select required name="objet">
           <option value="placeholder">objet...</option>
           <option value="design">DESIGNE</option>
           <option value="website">CONCEPTION</option>
           <option value="content">CREATION CONTENU</option>
-          <option value="management">GESTION</option>
+          <option value="management">GESTION DE PROJET</option>
         </select>
-        <textarea name="message" placeholder="Exprimez vos besoins et attentes..."></textarea>
+        <textarea required name="message" placeholder="Exprimez vos besoins et attentes..."></textarea>
         <input type="text" name="_honey" style="display:none">
         <input type="hidden" name="_captcha" value="false">
         <input class="button" type="submit" value="soumettre" />
