@@ -1,0 +1,610 @@
+:root {
+    --primary-color-white: #ffffff;
+    --primary-color-light-blue: #5fc2ba;
+    --primary-color-blue: #00f;
+    --secondary-color-dark-blue: #3b556d;
+    --secondary-color-very-dark-blue: #1c2942;
+    --secondary-color-black-blue: #010f30;
+    --primary-color-pink: rgb(228, 11, 129);
+    --primary-color-light-pink: rgb(228, 11, 129, .5);
+    --secondary-parag-color: darkgray;
+    --weight-lv1: 400;
+    --weight-lv2: 600;
+    --weight-lv3: 800;
+
+    --logo-size: 80px;
+
+    --police-name: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --police-parag: 'Times New Roman', Times, serif;
+    --police-head: Georgia, 'Times New Roman', Times, serif;
+
+    --inline-offset: 10vw;
+    --anim-offset: 30em;
+
+    font-size: 15px;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--secondary-color-black-blue);
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+
+}
+
+*:target {
+    scroll-padding-top: 25em;
+}
+
+img,
+svg,
+picture {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+p {
+    font-family: var(--police-parag);
+    font-weight: var(--weight-lv2);
+    margin-top: 2em;
+    text-align: left;
+    color: var(--primary-color-white);
+    font-size: 1.1em;
+    letter-spacing: .1em;
+    max-width: 50%;
+    opacity: .8;
+
+}
+
+.centered,
+#propos,
+#services,
+#portfolio,
+#contact {
+    width: min(1500px, calc(100vw - var(--inline-offset)));
+    margin: auto;
+    padding-block: 1em;
+    margin-top: 5rem ;
+}
+
+
+
+header {
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    padding: 20px 30px;
+    width: 100%;
+    background: url(../assets/images/logo_bis.svg) no-repeat -8px -20px;
+    z-index: 1000;
+}
+
+header figure {
+    width: var(--logo-size);
+    height: auto;
+    position: relative;
+    left: -25px;
+    top: -25px;
+}
+
+/* 
+ON COMMENCE A FAIRE DES MODIFICATIONS ETC
+*/
+/* header nav {} */
+
+header nav ul {
+    list-style-type: none;
+    background-color: var(--primary-color-light-pink);
+    padding: 5px 15px;
+    border-radius: 100px;
+}
+
+header nav ul li {
+    transition: all 1s;
+    font-size: 1em;
+    display: inline-block;
+    margin-left: 1em;
+}
+
+a {
+    color: var(--primary-color-white);
+    text-decoration: none;
+    font-family: var(--police-parag);
+    font-weight: var(--weight-lv1);
+    text-transform: capitalize;
+    letter-spacing: .1em;
+    position: relative;
+}
+
+a:hover {
+    color: var(--primary-color-light-blue);
+}
+
+.selected {
+    padding: .1em 1.5em;
+    background-color:   var(--secondary-color-black-blue) !important;
+    border: 1px solid var(--primary-color-light-pink);
+    border-radius: 20px;
+    box-shadow: 1px 1px 2px var(--primary-color-light-blue);
+}
+
+.selected a:hover {
+    color: var(--primary-color-white);
+    position: static;
+}
+
+header input,
+header label {
+    display: none;
+}
+
+#propos {
+    padding-inline: 5%;
+}
+#propos p{
+    text-align: justify;
+}
+
+#propos figure {
+    float: right;
+    width: 25em;
+    overflow: hidden;
+    height: 25em;
+    animation: floating 4s infinite both alternate ease-in-out;
+    position: relative;
+    top: 10em;
+    & img{
+        width: 150%;
+        height: 150%;
+        position: relative;
+        top: -25%;
+        left: -26%;
+    }
+}
+@keyframes floating {
+    50% {
+        top: 0em;
+    }
+
+}
+
+h1, h2 {
+    color: transparent;
+    background: linear-gradient(400deg, var(--primary-color-pink), var(--primary-color-light-blue));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -ms-background-clip: text;
+    font-weight: var(--weight-lv3);
+    font-size: 3em;
+    font-family: var(--police-name);
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    padding-top: .5em;
+}
+#propos ul li {
+    position: relative;
+    list-style-type: none;
+    font-weight: var(--weight-lv2);
+    font-family: var(--police-parag);
+    font-size: .8em;
+    color: var(--primary-color-white);
+    margin-top: 2em;
+    margin-right: .5em;
+    display: inline-block;
+    background-color: var(--secondary-color-dark-blue);
+    padding: .1em 1em;
+    border-radius: 20px;
+    box-shadow: 3px 3px 2px var(--primary-color-pink);
+    letter-spacing: .1em;
+    animation: pop infinite 5s;
+
+}
+
+#propos ul li:nth-of-type(2) {
+    animation-delay: 250ms;
+}
+
+#propos ul li:nth-of-type(3) {
+    animation-delay: 500ms;
+}
+
+#propos ul li:nth-of-type(4) {
+    animation-delay: 750ms;
+}
+
+@keyframes pop {
+    0% {
+        top: 0
+    }
+
+    10% {
+        top: -0.5em;
+    }
+
+    20% {
+        top: 0em;
+    }
+
+}
+
+
+
+
+.button,
+button {
+    padding: .5em 3em;
+    background-color: var(--primary-color-pink);
+    color: var(--primary-color-white);
+    text-transform: uppercase;
+    font-weight: var(--weight-lv1);
+    font-size: 1em;
+    border-radius: 30px;
+    margin-top: 2em;
+    letter-spacing: .1em;
+    display: block;
+    box-shadow: -10px 10px 10px var(--primary-color-light-pink),
+        10px -10px 10px var(--primary-color-light-pink),
+        10px -10px 10px var(--primary-color-light-pink),
+        -10px 0px 10px var(--primary-color-light-pink),
+        0px 0px 8px var(--primary-color-light-blue);
+
+    border: 2px var(--primary-color-pink) inset;
+    cursor: pointer;
+    /* margin-inline: auto; */
+}
+
+.button:hover,
+button:hover {
+    border-style: outset;
+    box-shadow: 0 10px 10px var(--primary-color-light-pink),
+        10px 0px 10px var(--primary-color-light-pink),
+        -10px 0px 10px var(--primary-color-light-pink),
+        0 -10px 10px var(--primary-color-light-pink),
+        0px 0px 8px var(--primary-color-light-blue);
+    font-size: 1.1 em;
+}
+
+#portfolio button {
+    margin-inline: auto;
+}
+
+#propos+* {
+    clear: both;
+}
+
+
+
+
+
+#services,
+#portfolio,
+#contact {
+    text-align: center;
+}
+
+#services h2,
+#portfolio h2
+{
+    font-weight: var(--weight-lv1);
+}
+
+#services h2, #services h3 {
+    color: var(--primary-color-light-pink);
+    letter-spacing: .1em;
+}
+
+#services p {
+    max-width: 80%;
+    margin-inline: auto;
+    font-size: 1.2em;
+    text-align-last: center;
+}
+
+#services aside {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 250px;
+    margin-top: 7em;
+    &:last-of-type p {
+        hyphens: auto;
+    }
+}
+
+#services aside p {
+    text-align: justify;
+    text-align-last: left;
+    font-size: 1em;
+
+}
+
+#services img {
+    width: 50%;
+}
+
+#services button {
+    margin-inline: auto;
+    margin-top: 6em;
+}
+
+#portfolio {
+    overflow: hidden;
+}
+#portfolio p{
+    max-width: 100%;
+    text-align: center;
+    padding-inline: 10%;
+}
+#portfolio aside{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+}
+#portfolio aside div{
+    width: max(300px , 40%);
+    background: var(--secondary-color-very-dark-blue);
+    margin: 1rem;
+    border-radius: 100px;
+    padding: 1rem .5rem;   
+}
+#portfolio aside div figure{
+    display: inline-block;
+    width: 10%;
+    vertical-align: middle;
+    margin: 0;
+    img{
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+}
+#portfolio aside div p{
+    display: inline-block;
+    width: 25ch;
+    text-wrap: nowrap;
+    vertical-align: middle;
+    margin: 0 0 0 1rem ;
+    padding: 0;
+    text-align: left;
+    color: var(--primary-color-white);
+    font-weight: bold;
+}
+
+#contact {
+    background: url(../assets/images/contact.png) no-repeat;
+    background-size: 400px 400px;
+    background-position: right center;
+    text-align: left;
+}
+
+#contact h2 {
+    text-align: center;
+}
+
+#contact input:not(input[type="submit"]),
+#contact select,
+#contact textarea {
+    display: block;
+    margin-top: 2em;
+    width: 50%;
+    border-radius: 20px;
+    font-weight: var(--weight-lv2);
+    text-align: center;
+    background: none;
+    color: var(--primary-color-white);
+    padding: .5em;
+    border: 1px groove var(--secondary-color-dark-blue);
+}
+
+#contact input:first-of-type,
+#contact input:nth-of-type(2) {
+    width: 25%;
+}
+
+#contact *:focus {
+    outline: none;
+    border-color: var(--primary-color-light-pink);
+    color: var(--primary-color-light-blue);
+}
+
+#contact textarea {
+    height: 250px;
+    text-align: left;
+    padding: 1.2em;
+}
+
+footer {
+    margin-top: 20em;
+    padding-block: .5em;
+    border-radius: 100px;
+    background: linear-gradient(60deg, var(--primary-color-light-pink), var(--primary-color-light-blue));
+    max-width: 300px;
+    margin-inline: auto;
+    margin-bottom: 1em;
+}
+
+footer p {
+    margin: auto;
+    font-size: small;
+}
+
+
+
+
+@media only screen and (max-width: 1200px) {
+    :root {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    :root {
+        font-size: 12px;
+    }
+
+    /* #propos h1{
+        padding-top: 1em;
+    } */
+}
+
+
+
+
+@media only screen and (max-width: 900px) {
+    p{
+        text-align: justify !important;
+        text-align-last: center;
+    }
+    header label {
+        background: url(../assets/images/icon-menu.svg) no-repeat 50% 50%;
+        padding: 10px 20px;
+        display: block;
+    }
+
+    header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 15px;
+
+    }
+
+    header nav ul {
+        background: none;
+    }
+
+    header nav ul li {
+        margin-bottom: 2em;
+        padding: .1em 1em;
+        background-color: var(--secondary-color-very-dark-blue);
+        box-shadow: 5px 5px 0 var(--primary-color-light-pink);
+        display: block;
+    }
+
+    header input:checked~nav {
+        display: block;
+    }
+
+    header input:checked~label {
+        background: url(../assets/images/icon-menu-close.svg) no-repeat 50% 50%;
+    }
+    .selected{
+        padding: 0 1.5em;
+        box-shadow: none;
+        border: none;
+    }
+
+    
+    .button,
+    button {
+        margin-inline: auto;
+    }
+
+    #propos {
+        text-align: center;
+    }
+
+    #propos figure {
+        float: none;
+        width: 60%;
+        margin: auto;
+        top: 0em;
+    }
+
+    @keyframes floating {
+        50% {
+            top: 3em;
+        }
+    
+    }
+
+    #propos p {
+        max-width: 100%;
+        font-size: 1.2em;
+        text-align: justify;
+    }
+
+    #propos ul li {
+        font-size: x-small;
+    }
+
+    #services aside {
+        margin-top: 5em;
+        max-width: 300px;
+    }
+
+
+
+    #contact {
+        background-position: center top;
+        padding-top: 300px;
+        position: relative;
+    }
+
+    #contact h2 {
+        position: absolute;
+        inset: 0;
+        margin-inline: auto;
+        z-index: -1;
+    }
+
+    #contact input:not(input[type="submit"]),
+    #contact select,
+    #contact textarea {
+        width: 80%;
+        margin-inline: auto;
+    }
+
+    #contact textarea {
+        height: 250px;
+        text-align: left;
+        padding: 1.2em;
+    }
+
+
+}
+
+#scroll-detector{
+    position: absolute;
+    top: 0;
+    padding: 15em;
+    /* background-color: red; */
+    opacity: 0;
+    /* z-index: 2000; */
+}
+
+@media screen and (min-width: 900px) {
+    .left-menu{
+        /* background-color: red; */
+        position: absolute;
+        right: -2em;
+        top: 30vh;
+    }
+    .left-menu ul{background: none;}
+    .left-menu li{
+        display: block;
+        margin-top: 1em;
+        background-color: var(--primary-color-light-pink);
+        text-align: center;
+        border-radius: 20px;
+        padding: .5em 1.5em;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    #services aside {
+        margin-top: 7em;
+        max-width: 70%;
+    }
+}
